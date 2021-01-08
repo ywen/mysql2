@@ -283,7 +283,6 @@ static void *nogvl_close(void *ptr) {
   if (wrapper->initialized && !wrapper->closed) {
     mysql_close(wrapper->client);
     wrapper->closed = 1;
-    wrapper->reconnect_enabled = 0;
     wrapper->active_thread = Qnil;
   }
 
